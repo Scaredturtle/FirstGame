@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BaddieAI : MonoBehaviour
+public class BaddieAI : AIHandler
 {
-    public float speed;
     public float sprintSpeed;
     public float sprintTimer;  //future thought
     float countdown;
@@ -34,11 +33,9 @@ public class BaddieAI : MonoBehaviour
 
 
         countdown -= Time.deltaTime;
-        if(countdown < 0)
-        {
-            countdown = sprintTimer;
-            movement = movement * sprintSpeed;
-        }
+        if (countdown < countdown / 2) movement = movement * sprintSpeed;
+
+        if(countdown < 0) countdown = sprintTimer;
     }
 
     void FixedUpdate()
