@@ -2,29 +2,39 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BlobAI : AIHandler
+public class BlobAI : MonoBehaviour
 {
-    private bool Recenter;
-    private float RecenterTimer;
-    private float jitter;
-    public float changeDirectionTimer;
+    public float speed;
     public Rigidbody2D rb;
+<<<<<<< Updated upstream
     Vector2 movement;
-    public Transform blobAnchorPoint;
+=======
+    Vector2 movement, AnchorPoint;
+    //private Transform blobAnchorPoint;
     public float distanceFromCenter;
+>>>>>>> Stashed changes
 
     // Start is called before the first frame update
     void Start()
     {
+<<<<<<< Updated upstream
+        
+=======
         jitter = changeDirectionTimer;
         Recenter = false;
         RecenterTimer = 20;
+        AnchorPoint = transform.position;
+>>>>>>> Stashed changes
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Vector2.Distance(transform.position, blobAnchorPoint.position) > distanceFromCenter)
+<<<<<<< Updated upstream
+        movement.x = Random.Range(-1, 2);
+        movement.y = Random.Range(-1, 2);
+=======
+        if (Vector2.Distance(transform.position, AnchorPoint) > distanceFromCenter)
         {
             Recenter = true;
         }
@@ -38,17 +48,21 @@ public class BlobAI : AIHandler
                 jitter = changeDirectionTimer;
             }
         }
+>>>>>>> Stashed changes
     }
 
     void FixedUpdate()
     {
+<<<<<<< Updated upstream
+        rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
+=======
         if (Recenter == false)
         {
             rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
         }
         else 
         {
-            transform.position = Vector2.MoveTowards(transform.position, blobAnchorPoint.position, speed * Time.fixedDeltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, AnchorPoint, speed * Time.fixedDeltaTime);
             if (RecenterTimer > 0)
             {
                 RecenterTimer--;
@@ -59,5 +73,6 @@ public class BlobAI : AIHandler
                 RecenterTimer = 20;
             }
         }
+>>>>>>> Stashed changes
     }
 }
