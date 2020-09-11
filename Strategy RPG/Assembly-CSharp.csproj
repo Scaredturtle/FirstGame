@@ -40,6 +40,7 @@
      <Compile Include="Assets\Scripts\BlobAI.cs" />
      <Compile Include="Assets\Scripts\AIHandler.cs" />
      <Compile Include="Assets\Scripts\DudeMovement.cs" />
+     <Compile Include="Assets\Scripts\BlobHandler.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Users/demar/Documents/Unity Projects/2020.1.4f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
