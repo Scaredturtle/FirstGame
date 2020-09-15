@@ -5,7 +5,8 @@ using UnityEngine;
 public class BlobAI : MonoBehaviour
 {
     public float speed, changeDirectionTimer;
-    private float jitter;
+    private float jitter, RecenterTimer;
+    private bool Recenter;
     public Rigidbody2D rb;
     Vector2 movement, AnchorPoint;
     //private Transform blobAnchorPoint;
