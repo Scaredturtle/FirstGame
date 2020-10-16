@@ -31,19 +31,19 @@ public class OtherDudeMove : MonoBehaviour
                 ismoving = true;
             }
             //Move Down
-            if(Input.GetKey("s"))
+            else if(Input.GetKey("s"))
             {
                 movement.y = -1;
                 ismoving = true;
             }
             //Move Right
-            if(Input.GetKey("d"))
+            else if(Input.GetKey("d"))
             {
                 movement.x = 1;
                 ismoving = true;
             }
             //Move Left
-            if(Input.GetKey("a"))
+            else if(Input.GetKey("a"))
             {
                 movement.x = -1;
                 ismoving = true;
